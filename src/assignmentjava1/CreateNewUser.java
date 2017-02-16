@@ -21,15 +21,39 @@ public class CreateNewUser {
 
     //First choice 
     public CreateNewUser() throws SQLException {
+        String name;
+        String userName;
+        String password;
 
         Statement stm = AssignmentJavaCore.createStm();
 
         System.out.println("Enter name : ");
-        String name = ScannerUtil.getString();
+        while (true) {
+            name = new Scanner(System.in).nextLine();
+            if (name.isEmpty()) {
+                System.err.println("Name cannot be blank !!!");
+            } else {
+                break;
+            }
+        }
         System.out.println("Enter username : ");
-        String userName = ScannerUtil.getString();
+        while (true) {
+            userName = new Scanner(System.in).nextLine();
+            if (userName.isEmpty()) {
+                System.err.println("Username cannot be blank !!!");
+            } else {
+                break;
+            }
+        }
         System.out.println("Enter password : ");
-        String password = ScannerUtil.getString();
+        while (true) {
+            password = new Scanner(System.in).nextLine();
+            if (password.isEmpty()) {
+                System.err.println("Password cannot be blank !!!");
+            } else {
+                break;
+            }
+        }
 
         sql = "INSERT INTO users (Name,Username,Password) VALUES ('" + name + "','" + userName + "','" + password + "')";
 
@@ -37,7 +61,7 @@ public class CreateNewUser {
         ResultSet validate = stm.executeQuery("SELECT * FROM users WHERE Username = '" + userName + "'");
 
         if (validate.next() == true) {
-            System.out.println("Sorry ,usename already exists !!!");
+            System.err.println("Sorry ,usename already exists !!!");
         } else {
             stm.execute(sql);
             System.out.println("Create successful !");

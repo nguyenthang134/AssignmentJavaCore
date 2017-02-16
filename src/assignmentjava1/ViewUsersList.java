@@ -50,7 +50,7 @@ public class ViewUsersList extends JFrame {
     }
 
     public void initComponent() {
-        this.setSize(400, 200);
+        this.setSize(400, 300);
         JScrollPane scroll = new JScrollPane(jTable);
         this.add(scroll);
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);

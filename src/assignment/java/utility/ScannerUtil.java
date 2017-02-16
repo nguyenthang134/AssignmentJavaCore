@@ -26,21 +26,4 @@ public class ScannerUtil {
 
         return input;
     }
-
-    public static String getString() {
-        String inputString = "";
-        while (true) {
-            try {
-                inputString = new Scanner(System.in).nextLine();
-                if (inputString.trim().length() > 0) {
-                    break;
-                }
-            } catch (Exception e) {
-                System.err.println("Please enter string type !");
-            }
-        }
-
-        return inputString;
-    }
-
 }

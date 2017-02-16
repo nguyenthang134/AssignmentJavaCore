@@ -36,14 +36,16 @@ public class AssignmentJavaCore {
 
     //Menu
     public static void menu() throws SQLException {
-        System.out.println("USERS MANAGERMENT PROGRAM");
         while (choice != 5) {
-            System.out.println("-----------MENU----------");
-            System.out.println("1.Create new user.");
-            System.out.println("2.Users list.");
-            System.out.println("3.Update user info.");
-            System.out.println("4.Delete user");
-            System.out.println("5.Quit");
+            System.out.println("===========================");
+            System.out.println("|USERS MANAGERMENT PROGRAM|");
+            System.out.println("===========================");
+            System.out.println("|1.Create new user.       |");
+            System.out.println("|2.Users list.            |");
+            System.out.println("|3.Update user info.      |");
+            System.out.println("|4.Delete user            |");
+            System.out.println("|5.Quit                   |");
+            System.out.println("===========================");
             System.out.println("Select your choice :");
             choice = ScannerUtil.getInt();
             switch (choice) {
@@ -56,7 +58,7 @@ public class AssignmentJavaCore {
                     conti();
                     break;
                 case 3:
-                    System.out.println("3");
+                    new UpdateUserInfo();
                     conti();
                     break;
                 case 4:
@@ -66,7 +68,7 @@ public class AssignmentJavaCore {
                 case 5:
                     break;
                 default:
-                    System.out.println("Invalid choice !");
+                    System.err.println("Invalid choice !");
                     break;
             }
         }
@@ -85,17 +87,12 @@ public class AssignmentJavaCore {
         return statement;
     }
     
-    
-
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) throws SQLException {
         try {
             menu();
         } catch (SQLException e) {
-            System.out.println("Something went wrong ,");
-            System.out.println("can't connect to the Database !");
+            System.err.println("Something went wrong ,");
+            System.err.println("can't connect to the Database !");
         }
     }
 }

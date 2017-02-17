@@ -62,13 +62,13 @@ public class AssignmentJavaCore {
                     conti();
                     break;
                 case 4:
-                    System.out.println("4");
+                    new DeleteUser();
                     conti();
                     break;
                 case 5:
                     break;
                 default:
-                    System.err.println("Invalid choice !");
+                    System.err.println("Invalid choice !!!");
                     break;
             }
         }

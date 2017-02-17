@@ -60,9 +60,8 @@ public class CreateNewUser {
         if (validate.next() == true) {
             System.err.println("Sorry ,usename already exists !!!");
         } else {
-//            stm.execute(sql);
+            stm.execute(sql);
             System.out.println("Create successful !");
         }
     }
-
 }

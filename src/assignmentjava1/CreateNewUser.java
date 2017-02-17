@@ -28,32 +28,29 @@ public class CreateNewUser {
         Statement stm = AssignmentJavaCore.createStm();
 
         System.out.println("Enter name : ");
-        while (true) {
-            name = new Scanner(System.in).nextLine();
-            if (name.isEmpty()) {
-                System.err.println("Name cannot be blank !!!");
-            } else {
-                break;
-            }
-        }
+//        while (true) {
+//            name = new Scanner(System.in).nextLine();
+//            if (name.isEmpty()) {
+//                System.err.println("Name cannot be blank !!!");
+//            } else {
+//                break;
+//            }
+//        }
+        name = ScannerUtil.getStr();
+        
         System.out.println("Enter username : ");
-        while (true) {
-            userName = new Scanner(System.in).nextLine();
-            if (userName.isEmpty()) {
-                System.err.println("Username cannot be blank !!!");
-            } else {
-                break;
-            }
-        }
+//        while (true) {
+//            userName = new Scanner(System.in).nextLine();
+//            if (userName.isEmpty()) {
+//                System.err.println("Username cannot be blank !!!");
+//            } else {
+//                break;
+//            }
+//        }
+        userName = ScannerUtil.getStr();
+        
         System.out.println("Enter password : ");
-        while (true) {
-            password = new Scanner(System.in).nextLine();
-            if (password.isEmpty()) {
-                System.err.println("Password cannot be blank !!!");
-            } else {
-                break;
-            }
-        }
+        password = ScannerUtil.getStr();
 
         sql = "INSERT INTO users (Name,Username,Password) VALUES ('" + name + "','" + userName + "','" + password + "')";
 
@@ -67,5 +64,4 @@ public class CreateNewUser {
             System.out.println("Create successful !");
         }
     }
-
 }

@@ -26,4 +26,17 @@ public class ScannerUtil {
 
         return input;
     }
+    
+    public static String getStr(){
+        String input = "";
+        while(true){
+            input = new Scanner(System.in).nextLine();
+            if(input.isEmpty()){
+                System.err.println("This section cannot be blank");
+            } else {
+                break;
+            }
+        }
+        return input;
+    }
 }

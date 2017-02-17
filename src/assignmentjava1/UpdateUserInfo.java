@@ -17,10 +17,10 @@ import java.sql.ResultSet;
 public class UpdateUserInfo {
 
     public UpdateUserInfo() throws SQLException {
+        String name = "";
+        String userName = "";
+        String password = "";
         while (true) {
-            String name = "";
-            String userName = "";
-            String password = "";
             Statement statement = AssignmentJavaCore.createStm();
 
             //Enter user ID then display 
@@ -29,12 +29,12 @@ public class UpdateUserInfo {
             String sql = "SELECT Name,Username,Password FROM users Where ID = " + ID;
 
             ResultSet checkID = statement.executeQuery("SELECT * FROM users WHERE ID = " + ID);
-            
+
             if (checkID.next() == false) {
-                    System.out.println("Sorry ,there's is no user with that ID !!!");
-                    break;
-                }
-            
+                System.out.println("Sorry ,there's is no user with that ID !!!");
+                break;
+            }
+
             ResultSet rs = statement.executeQuery(sql);
             while (rs.next()) {
                 name = rs.getString("Name");
@@ -64,11 +64,11 @@ public class UpdateUserInfo {
             }
 
             try {
-            String update = "UPDATE users SET Name = '" + newName + "',Username = '" + newUserName + "',Password = '" + newPassword + "' WHERE ID = " + ID;
-            statement.execute(update);
+                String update = "UPDATE users SET Name = '" + newName + "',Username = '" + newUserName + "',Password = '" + newPassword + "' WHERE ID = " + ID;
+                statement.execute(update);
                 System.out.println("Update successful !!!");
             } catch (Exception e) {
-                System.err.println("Cannot update");
+                System.err.println("Cannot update !!!");
             }
             break;
         }

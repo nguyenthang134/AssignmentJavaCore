@@ -16,11 +16,6 @@ import java.sql.ResultSet;
  */
 public class UpdateUserInfo {
 
-    static void printBeauty() {
-        System.out.printf("%-30s %f\n", "Hello", 10.2);
-        System.out.printf("%-30s %f\n", "Hello World World", 10.2);
-    }
-
     public UpdateUserInfo() throws SQLException {
         while (true) {
             String name = "";

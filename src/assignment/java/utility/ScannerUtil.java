@@ -20,7 +20,7 @@ public class ScannerUtil {
                 input = new Scanner(System.in).nextInt();
                 break;
             } catch (Exception e) {
-                System.err.println("Please enter number type !");
+                System.err.println("Invalid choice !!!");
             }
         }
 
@@ -32,7 +32,7 @@ public class ScannerUtil {
         while(true){
             input = new Scanner(System.in).nextLine();
             if(input.isEmpty()){
-                System.err.println("This section cannot be blank");
+                System.err.println("This section cannot be blank !!!");
             } else {
                 break;
             }

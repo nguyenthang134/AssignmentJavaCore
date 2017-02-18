@@ -3,11 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Thang/Documents/NetBeansProjects/AssigmentJava1/src/assigmentjava1/Config.java</file>
-            <file>file:/C:/Users/Thang/Documents/NetBeansProjects/AssigmentJava1/src/assigmentjava1/CreateNewUser.java</file>
-            <file>file:/C:/Users/Thang/Documents/NetBeansProjects/AssigmentJava1/src/assigmentjava1/ViewUsersList.java</file>
+            <file>file:/C:/Users/Thang/Documents/NetBeansProjects/AssigmentJava1/src/assignment/java/view/ConsoleMenu.java</file>
+            <file>file:/C:/Users/Thang/Documents/NetBeansProjects/AssigmentJava1/src/assignment/java/model/User.java</file>
             <file>file:/C:/Users/Thang/Documents/NetBeansProjects/AssigmentJava1/src/assignment/java/utility/ScannerUtil.java</file>
-            <file>file:/C:/Users/Thang/Documents/NetBeansProjects/AssigmentJava1/src/assigmentjava1/AssignmentJavaCore.java</file>
+            <file>file:/C:/Users/Thang/Documents/NetBeansProjects/AssigmentJava1/src/assignment/java/model/UserModel.java</file>
+            <file>file:/C:/Users/Thang/Documents/NetBeansProjects/AssigmentJava1/src/assignment/java/controller/UserController.java</file>
         </group>
     </open-files>
 </project-private>

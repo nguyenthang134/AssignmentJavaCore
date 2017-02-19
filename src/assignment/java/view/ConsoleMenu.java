@@ -36,7 +36,8 @@ public class ConsoleMenu {
             System.out.println("|2.Users list.            |");
             System.out.println("|3.Update user info.      |");
             System.out.println("|4.Delete user            |");
-            System.out.println("|5.Quit                   |");
+            System.out.println("|5.Search user            |");
+            System.out.println("|6.Quit                   |");
             System.out.println("===========================");
             System.out.println("Select your choice :");
             choice = ScannerUtil.getInt();
@@ -58,12 +59,14 @@ public class ConsoleMenu {
                     UserController.conti();
                     break;
                 case 5:
+                    UserController.processSearch();
+                case 6:
                     break;
                 default:
                     System.err.println("Invalid choice !!!");
                     break;
             }
-            if (choice == 5) {
+            if (choice == 6) {
                 break;
             }
         }

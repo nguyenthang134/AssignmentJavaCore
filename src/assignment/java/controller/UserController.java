@@ -29,11 +29,11 @@ public class UserController {
         while (true) {
             conti = ScannerUtil.getInt();
             if (conti == 2) {
-                ConsoleMenu.setChoice(5);
+                ConsoleMenu.setChoice(6);
                 break;
             }
             if (conti == 1) {
-                ConsoleMenu.setChoice(6);
+                ConsoleMenu.setChoice(7);
                 break;
             } else {
                 System.err.println("Invalid choice !!!");
@@ -56,9 +56,10 @@ public class UserController {
         user.setName(name);
         user.setUserName(userName);
         user.setPassword(password);
-        UserModel.insert(name, userName, password);
+        UserModel.insert(user);
     }
 
+    //Update user info
     public static void processUpdate() throws SQLException {
         while (true) {
             Statement statement = DAO.createStm();
@@ -94,12 +95,19 @@ public class UserController {
             System.out.println("Enter new Password : ");
             String newPassword = new Scanner(System.in).nextLine();
 
-            UserModel.updateInfo(ID, newName, newUserName, newPassword);
+            User user = new User();
+            user.setID(ID);
+            user.setName(newName);
+            user.setUserName(newUserName);
+            user.setPassword(newPassword);
+
+            UserModel.updateInfo(user);
 
             break;
         }
     }
 
+    //Delete user
     public static void processDelete() {
         try {
             while (true) {
@@ -125,11 +133,53 @@ public class UserController {
                     System.out.printf("%-10s %s\n", "Username :", userName);
                     System.out.printf("%-10s %s\n", "Password :", password);
                 }
-                UserModel.deleteUser(ID);
+
+                User user = new User();
+                user.setID(ID);
+                UserModel.deleteUser(user);
                 break;
             }
         } catch (Exception e) {
             System.err.println("Cannot delete !!!");
+        }
+    }
+
+    //Search user
+    public static void processSearch() {
+        while (true) {
+            User user = new User();
+            try {
+                System.out.println("What do you want to search :");
+                System.out.println("1.ID");
+                System.out.println("2.Name");
+                System.out.println("3.Username");
+                System.out.println("4.Back");
+
+                int choice = ScannerUtil.getInt();
+
+                if (choice == 1) {
+                    System.out.println("Enter ID :");
+                    int ID = ScannerUtil.getInt();
+                    user.setID(ID);
+                    UserModel.searchByID(user);
+                } else if (choice == 2) {
+                    System.out.println("Enter name :");
+                    String name = ScannerUtil.getStr();
+                    user.setName(name);
+                    UserModel.searchByName(user);
+                } else if (choice == 3) {
+                    System.out.println("Enter Username :");
+                    String userName = ScannerUtil.getStr();
+                    user.setUserName(userName);
+                    UserModel.searchByUserName(user);
+                } else if (choice == 4) {
+                    break;
+                } else {
+                    System.err.println("Invalid choice !!!");
+                }
+            } catch (Exception e) {
+                System.err.println("Cannot search !!!");
+            }
         }
     }
 }

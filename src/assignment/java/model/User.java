@@ -13,6 +13,7 @@ public class User {
     String name;
     String userName;
     String password;
+    int ID;
 
     public String getName() {
         return name;
@@ -36,5 +37,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
     }
 }

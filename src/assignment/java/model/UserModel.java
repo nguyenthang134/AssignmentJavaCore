@@ -19,23 +19,6 @@ public class UserModel {
 
     private static String sql;
 
-    //Get primitive values in SQL table
-    private static String name = "";
-    private static String userName = "";
-    private static String password = "";
-
-    public static String getName() {
-        return name;
-    }
-
-    public static String getUserName() {
-        return userName;
-    }
-
-    public static String getPassword() {
-        return password;
-    }
-
     //Create new user
     public static void insert(User user) {
         sql = "INSERT INTO users (Name,Username,Password) VALUES ('" + user.getName() + "','" + user.getUserName() + "','" + user.getPassword() + "')";
@@ -81,6 +64,23 @@ public class UserModel {
     }
 
     //Update user info
+    //Get primitive values in SQL table
+    private static String name = "";
+    private static String userName = "";
+    private static String password = "";
+
+    public static String getName() {
+        return name;
+    }
+
+    public static String getUserName() {
+        return userName;
+    }
+
+    public static String getPassword() {
+        return password;
+    }
+
     public static void updateInfo(User user) {
         try {
             String name = "";

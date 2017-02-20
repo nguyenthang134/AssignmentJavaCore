@@ -20,43 +20,43 @@ import java.util.Scanner;
  * @author Thang
  */
 public class UserController {
-
+    
     private static int conti;
 
-    //Ask do you want to continue or not 
-    public static void conti() {
-        System.out.println("\nDo you want to continue ?  1.YES|2.NO");
+    //Create new user
+    public static void processInsert() {
         while (true) {
+            System.out.println("Enter name : ");
+            String name = ScannerUtil.getStr();
+
+            System.out.println("Enter username : ");
+            String userName = ScannerUtil.getStr();
+
+            System.out.println("Enter password : ");
+            String password = ScannerUtil.getStr();
+
+            User user = new User();
+            user.setName(name);
+            user.setUserName(userName);
+            user.setPassword(password);
+            UserModel.insert(user);
+
+            System.out.println("\nDo you want to continue ?  1.YES|2.NO");
             conti = ScannerUtil.getInt();
             if (conti == 2) {
-                ConsoleMenu.setChoice(6);
                 break;
-            }
-            if (conti == 1) {
-                ConsoleMenu.setChoice(7);
-                break;
+            } else if (conti == 1) {
+                System.out.print("");
             } else {
                 System.err.println("Invalid choice !!!");
+                break;
             }
         }
     }
 
-    //Create new user
-    public static void processInsert() {
-        System.out.println("Enter name : ");
-        String name = ScannerUtil.getStr();
-
-        System.out.println("Enter username : ");
-        String userName = ScannerUtil.getStr();
-
-        System.out.println("Enter password : ");
-        String password = ScannerUtil.getStr();
-
-        User user = new User();
-        user.setName(name);
-        user.setUserName(userName);
-        user.setPassword(password);
-        UserModel.insert(user);
+    //View list 
+    public static void processViewList() {
+        UserModel.viewList();
     }
 
     //Update user info
@@ -103,7 +103,16 @@ public class UserController {
 
             UserModel.updateInfo(user);
 
-            break;
+            System.out.println("\nDo you want to continue ?  1.YES|2.NO");
+            conti = ScannerUtil.getInt();
+            if (conti == 2) {
+                break;
+            } else if (conti == 1) {
+                System.out.print("");
+            } else {
+                System.err.println("Invalid choice !!!");
+                break;
+            }
         }
     }
 
@@ -137,7 +146,17 @@ public class UserController {
                 User user = new User();
                 user.setID(ID);
                 UserModel.deleteUser(user);
-                break;
+
+                System.out.println("\nDo you want to continue ?  1.YES|2.NO");
+                conti = ScannerUtil.getInt();
+                if (conti == 2) {
+                    break;
+                } else if (conti == 1) {
+                    System.out.print("");
+                } else {
+                    System.err.println("Invalid choice !!!");
+                    break;
+                }
             }
         } catch (Exception e) {
             System.err.println("Cannot delete !!!");

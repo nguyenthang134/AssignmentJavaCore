@@ -29,7 +29,7 @@ public class ConsoleMenu {
     //Menu
     public static void menu() throws SQLException{
         while (true) {
-            System.out.println("===========================");
+            System.out.println("\n===========================");
             System.out.println("|USERS MANAGERMENT PROGRAM|");
             System.out.println("===========================");
             System.out.println("|1.Create new user.       |");
@@ -44,19 +44,15 @@ public class ConsoleMenu {
             switch (choice) {
                 case 1:
                     UserController.processInsert();
-                    UserController.conti();
                     break;
                 case 2:
-                    UserModel.viewList();
-                    UserController.conti();
+                    UserController.processViewList();
                     break;
                 case 3:
                     UserController.processUpdate();
-                    UserController.conti();
                     break;
                 case 4:
                     UserController.processDelete();
-                    UserController.conti();
                     break;
                 case 5:
                     UserController.processSearch();
